@@ -1,6 +1,6 @@
-package com.digitopia.digitopiacasestudy.model.enums;
+package com.digitopia.digitopiacasestudy.enums;
 
-public enum Status {
+public enum UserStatus {
 
     ACTIVE, PENDING, DEACTIVATED, INVITED, PASSIVE, DELETED;
 }

@@ -2,32 +2,32 @@ version: "3.2"
 
 services:
   db:
-    container_name: realworld-postgresql
+    container_name: digitopia-postgresql
     image: postgres
     ports:
       - "5432:5432"
     networks:
-      - real-network
+      - new-network
     restart: always
     environment:
-      POSTGRES_DB: goodbooks
-      POSTGRES_USER: realworld
-      POSTGRES_PASSWORD: realworld
+      POSTGRES_DB: digitopia
+      POSTGRES_USER: digitopia
+      POSTGRES_PASSWORD: password
     volumes:
       - ./pgdata:/var/lib/postgresql/data
 
   pgadmin:
-    container_name: realworld-pgadmin
+    container_name: digitopia-pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: goodbook@realworld.com
       PGADMIN_DEFAULT_PASSWORD: realworld
     ports:
-      - "8081:80"
+      - "9090:80"
     networks:
-      - real-network
+      - new-network
     restart: always
 
 networks:
-  real-network:
+  new-network:
     driver: bridge
